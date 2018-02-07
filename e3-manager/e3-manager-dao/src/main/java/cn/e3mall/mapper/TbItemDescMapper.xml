@@ -220,14 +220,16 @@
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.e3mall.pojo.TbItemDesc" >
     update tb_item_desc
-    set created = #{created,jdbcType=TIMESTAMP},
+    set
+      created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP},
       item_desc = #{itemDesc,jdbcType=LONGVARCHAR}
     where item_id = #{itemId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.e3mall.pojo.TbItemDesc" >
     update tb_item_desc
-    set created = #{created,jdbcType=TIMESTAMP},
+    set
+      created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP}
     where item_id = #{itemId,jdbcType=BIGINT}
   </update>

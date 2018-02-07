@@ -50,6 +50,12 @@
 	                <textarea style="width:800px;height:300px;visibility:hidden;" name="desc"></textarea>
 	            </td>
 	        </tr>
+	        <tr class="status hide">
+	            <td>商品状态:</td>
+	            <td>
+                <input class="easyui-numberbox" type="hidden" name="status" data-options="required:true" />
+                </td>
+            </tr>
 	        <tr class="params hide">
 	        	<td>商品规格:</td>
 	        	<td>
@@ -100,7 +106,8 @@
 		
 		$("#itemeEditForm [name=itemParams]").val(paramJson);
 		
-		$.post("/rest/item/update",$("#itemeEditForm").serialize(), function(data){
+		$.post("/item/update",$("#itemeEditForm").serialize(), function(data){
+		    console.log(data);
 			if(data.status == 200){
 				$.messager.alert('提示','修改商品成功!','info',function(){
 					$("#itemEditWindow").window('close');

@@ -246,7 +246,9 @@
       image = #{record.image,jdbcType=VARCHAR},
       cid = #{record.cid,jdbcType=BIGINT},
       status = #{record.status,jdbcType=TINYINT},
+      <!--
       created = #{record.created,jdbcType=TIMESTAMP},
+      -->
       updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -298,8 +300,10 @@
       image = #{image,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=BIGINT},
       status = #{status,jdbcType=TINYINT},
-      created = #{created,jdbcType=TIMESTAMP},
-      updated = #{updated,jdbcType=TIMESTAMP}
+    <!--
+    created = #{created,jdbcType=TIMESTAMP},
+      -->
+    updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

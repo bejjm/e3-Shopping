@@ -39,7 +39,7 @@
 	<div class="indexW">
       <div id="index_slide" class="slide_wrap">
 		<ol>
-		    <!--
+
 			<c:forEach items="${ad1List}" var="node" varStatus="status">
 			<li>
 			  <a name="sfbest_hp_hp_focus_${status.index }" class="fore_pic trackref" href="${node.url }" target="_blank"> 
@@ -47,7 +47,8 @@
 			  </a>
 			</li>
 			</c:forEach>
-			-->
+
+			<!--
 			<li>
 			  <a name="sfbest_hp_hp_focus_1" class="fore_pic trackref" href="/html/activity/1471934470.html" target="_blank"> 
 				<img id="lunbo_1" alt="8.30-9.5 月饼"	src="/images/html/aa472cb9f9624d22d1fcfd1c4dffbe42.jpg">
@@ -88,6 +89,7 @@
 					id="lunbo_8" alt="8.27-8.29一元换购"
 					src="/images/html/4dd7317569a06a451c1fe7762d6bf928.jpg">
 			</a></li>
+			-->
 		</ol>
 	</div>      
      <div class="rSide">	
@@ -108,11 +110,12 @@
 		   	  </div>   
  	</div>
       <ul class="none" id="lunboNum">
-      			<!--
+
       			<c:forEach items="${ad1List }" varStatus="status">
       			<li class="<c:if test="${status.index==0 }">cur</c:if>">${status.index+1 }</li>
       			</c:forEach>
-      			-->
+      			<!--
+
 		        <li class="cur">1</li>
 		        <li class="">2</li>
 		        <li class="">3</li>
@@ -121,6 +124,7 @@
 		        <li class="">6</li>
 		        <li class="">7</li>
 		        <li class="">8</li>
+		        -->
 		      </ul>
       <div class="indexbg" id="indexbg">
       <dl style="left: -1903px;">

@@ -12,7 +12,7 @@
     <context:component-scan base-package="cn.e3mall.portal.controller" />
     <mvc:annotation-driven />
     <!-- 加载配置文件 -->
-    <!--<context:property-placeholder location="classpath:conf/resource.properties" />-->
+    <context:property-placeholder location="classpath:conf/resource.properties" />
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
@@ -23,5 +23,5 @@
     <dubbo:registry protocol="zookeeper" address="192.168.25.128:2181"/>
     <!-- id 为Controller需要注入的service 例如：private ItemService itemService -->
     <dubbo:reference interface="cn.e3mall.service.ItemService" id="itemService" />
-    <!--<dubbo:reference interface="cn.e3mall.service.ItemCatService" id="itemCatService" />-->
+    <dubbo:reference interface="cn.e3mall.content.service.ContentService" id="contentService" />
 </beans>

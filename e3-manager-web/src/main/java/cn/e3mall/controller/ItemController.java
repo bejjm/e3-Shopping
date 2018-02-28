@@ -3,7 +3,6 @@ package cn.e3mall.controller;
 import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.coomon.pojo.EasyUIDataGridResult;
 import cn.e3mall.pojo.TbItem;
-import cn.e3mall.pojo.TbItemDesc;
 import cn.e3mall.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +28,12 @@ public class ItemController {
         return item;
     }
 
+    /**
+     * 商品列表，(分页)
+     * @param page 页数
+     * @param rows 一页多少条记录
+     * @return
+     */
     @RequestMapping("/item/list")
     @ResponseBody
     public EasyUIDataGridResult getItemList(Integer page, Integer rows) {

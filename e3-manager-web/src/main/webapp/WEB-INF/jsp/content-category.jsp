@@ -62,9 +62,16 @@ function menuHandler(item){
 	}else if(item.name === "delete"){
 		$.messager.confirm('确认','确定删除名为 '+node.text+' 的分类吗？',function(r){
 			if(r){
-				$.post("/content/category/delete/",{id:node.id},function(){
-					tree.tree("remove",node.target);
-				});	
+				$.post("/content/category/delete/",{id:node.id},function(data){
+
+					//只能从子节点开始删除，不能删除父节点
+					if(data.status == 200){
+                        tree.tree("remove",node.target);
+                    }else{
+
+                        $.messager.alert('提示','该分类下还有 '+ data.msg+ ' 个子分类，请先删除子分类!');
+                    }
+				});
 			}
 		});
 	}

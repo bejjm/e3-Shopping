@@ -10,7 +10,6 @@ import cn.e3mall.pojo.TbItemDesc;
 import cn.e3mall.pojo.TbItemExample;
 import cn.e3mall.pojo.TbItemExample.Criteria;
 import cn.e3mall.service.ItemService;
-import com.alibaba.dubbo.container.page.PageHandler;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

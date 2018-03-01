@@ -1,6 +1,6 @@
 package cn.e3mall.controller;
 
-import cn.e3mall.coomon.pojo.EasyUITreeNode;
+import cn.e3mall.common.pojo.EasyUITreeNode;
 import cn.e3mall.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

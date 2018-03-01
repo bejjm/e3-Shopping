@@ -2,7 +2,7 @@ package cn.e3mall.service.impl;
 
 import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.common.utils.IDUtils;
-import cn.e3mall.coomon.pojo.EasyUIDataGridResult;
+import cn.e3mall.common.pojo.EasyUIDataGridResult;
 import cn.e3mall.mapper.TbItemDescMapper;
 import cn.e3mall.mapper.TbItemMapper;
 import cn.e3mall.pojo.TbItem;

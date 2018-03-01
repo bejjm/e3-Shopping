@@ -2,7 +2,7 @@ package cn.e3mall.content.service.impl;
 
 import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.content.service.ContentCategoryService;
-import cn.e3mall.coomon.pojo.EasyUITreeNode;
+import cn.e3mall.common.pojo.EasyUITreeNode;
 import cn.e3mall.mapper.TbContentCategoryMapper;
 import cn.e3mall.pojo.TbContentCategory;
 import cn.e3mall.pojo.TbContentCategoryExample;

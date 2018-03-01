@@ -28,7 +28,32 @@
         <!-- 加载mybatis的全局配置文件 -->
         <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
     </bean>
+    <!-- mybatis：DAO映射 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="cn.e3mall.mapper" />
     </bean>
 </beans>
+
+<!--mybatis 整合spring之mapperLocations配置的问题-
+https://www.cnblogs.com/1xin1yi/p/7373739.html
+
+spring整合mybatis时遇到这么一个问题，就是在配置sqlSessionFactory时是否要配置mapperLocations的问题。
+
+<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<property name="dataSource" ref="datasource"></property>
+<property name="typeAliasesPackage" value="com.fan.entity"/>
+ 当mybatis的xml文件和mapper接口不在相同包下时，需要用mapperLocations属性指定xml文件的路径。
+   *是个通配符，代表所有的文件，**代表所有目录下
+<property name="mapperLocations" value="classpath:com/fan/mapper/*.xml" />
+
+也可以引入mybatis配置文件
+    <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml"></property>
+</bean>
+         通过扫描的模式，扫描目录在com.lanyuan.mapper目录下的mapper
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+<property name="basePackage" value="com.fan.mapper"></property>
+</bean>
+结论是：如果Mapper.xml与Mapper.class在同一个包下且同名，spring扫描Mapper.class的同时会自动扫描同名的Mapper.xml并装配到Mapper.class。
+如果Mapper.xml与Mapper.class不在同一个包下或者不同名，就必须使用配置mapperLocations指定mapper.xml的位置。
+
+此时spring是通过识别mapper.xml中的 <mapper namespace="com.fan.mapper.UserDao"> namespace的值来确定对应的Mapper.class的。-->

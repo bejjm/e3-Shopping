@@ -1,29 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>cn.e3mall</groupId>
         <artifactId>e3-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>e3-manager-web</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>e3-search-web</artifactId>
     <packaging>war</packaging>
     <dependencies>
-        <dependency>
-            <groupId>cn.e3mall</groupId>
-            <artifactId>e3-manager-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.e3mall</groupId>
-            <artifactId>e3-content-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>cn.e3mall</groupId>
             <artifactId>e3-search-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
         <!-- JSP相关 -->
         <dependency>
             <groupId>jstl</groupId>
@@ -95,11 +86,6 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
         </dependency>
-        <!-- 文件上传组件 -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
     </dependencies>
 
     <!-- 配置tomcat插件 -->
@@ -110,7 +96,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/</path>
-                    <port>8081</port>
+                    <port>8085</port>
                     <server>tomcat7</server>
                 </configuration>
             </plugin>

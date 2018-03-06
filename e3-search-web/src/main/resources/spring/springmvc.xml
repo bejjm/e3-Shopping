@@ -17,7 +17,8 @@
         <property name="suffix" value=".jsp" />
     </bean>
     <context:property-placeholder location="classpath:conf/resource.properties" />
-
+    <!--全局异常处理器-->
+    <bean class="cn.e3mall.search.exception.GlobalExceptionResolver"/>
     <!-- 引用dubbo服务 -->
     <dubbo:application name="e3-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.25.128:2181"/>

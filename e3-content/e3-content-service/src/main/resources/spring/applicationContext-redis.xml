@@ -8,15 +8,15 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
-    <!--&lt;!&ndash;连接redis单机版（使用jedis连接池）&ndash;&gt;-->
-    <!--<bean id="jedisClientPool" class="cn.e3mall.common.jedis.JedisClientPool">-->
-        <!--<property name="jedisPool" ref="jedisPool"/>-->
-    <!--</bean>-->
-    <!--<bean id ="jedisPool" class="redis.clients.jedis.JedisPool">-->
-        <!--<constructor-arg name="host" value="192.168.25.129"/>-->
-        <!--<constructor-arg name="port" value="6379"/>-->
-    <!--</bean>-->
-    <!---->
+    <!--连接redis单机版（使用jedis连接池）
+    <bean id="jedisClientPool" class="cn.e3mall.common.jedis.JedisClientPool">
+        <property name="jedisPool" ref="jedisPool"/>
+    </bean>
+    <bean id ="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg name="host" value="192.168.25.129"/>
+        <constructor-arg name="port" value="6379"/>
+    </bean>
+    -->
     <!--
         注意：单机版和集群版不能共存，使用单机版时注释集群版的配置。使用集群版，把单机版注释。
     -->

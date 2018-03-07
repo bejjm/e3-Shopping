@@ -152,7 +152,8 @@ public class ActiveMqTest {
 		});
 		System.out.println("topic消费者1已经启动。。。。");
 		//等待消息,否则就执行下面关闭资源了，不一定接收到消息，所以需要等待
-		System.in.read();
+		//System.in.read();
+		Thread.sleep(1000);
 		//9、关闭资源
 		consumer.close();
 		session.close();

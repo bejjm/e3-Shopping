@@ -21,7 +21,6 @@
     <!-- 引用dubbo服务 -->
     <dubbo:application name="e3-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.25.128:2181"/>
-    <!-- id 为Controller需要注入的service 例如：private ItemService itemService -->
-    <dubbo:reference interface="cn.e3mall.service.ItemService" id="itemService" />
+    <!-- id 为Controller需要注入的service 例如：private ContentService contentService -->
     <dubbo:reference interface="cn.e3mall.content.service.ContentService" id="contentService" />
 </beans>

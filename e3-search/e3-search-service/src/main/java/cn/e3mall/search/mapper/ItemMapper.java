@@ -7,7 +7,10 @@ import java.util.List;
 public interface ItemMapper {
     /**
      * 导入商品数据到solr索引库的dao方法
+     *
      * @return
      */
     List<SearchItem> getItemList();
+
+    SearchItem getItemByid(long itemId);
 }

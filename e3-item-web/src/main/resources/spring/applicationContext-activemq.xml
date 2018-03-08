@@ -29,12 +29,6 @@
         <property name="connectionFactory" ref="connectionFactory" />
     </bean>
 
-    <!--这个是队列目的地，点对点的 -->
-    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
-        <constructor-arg>
-            <value>spring-queue</value>
-        </constructor-arg>
-    </bean>
     <!--这个是主题目的地，一对多的 -->
     <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
         <constructor-arg value="itemAddTopic" />
@@ -42,21 +36,14 @@
 
     <!-- 接收消息 -->
     <!-- 配置监听器 -->
-    <bean id="myMessageListener" class="cn.e3mall.search.message.MyMessageListener" />
-    <bean id="itemMessageListener" class="cn.e3mall.search.message.ItemMessageListener" />
+    <bean id="htmlGenListener" class="cn.e3mall.item.listener.HtmlGenListener" />
 
-    <!-- myMessageListener 消息监听容器  -->
-    <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-        <property name="connectionFactory" ref="connectionFactory" />
-        <property name="destination" ref="queueDestination" />
-        <property name="messageListener" ref="myMessageListener" />
-    </bean>
 
-    <!--itemMessageListener 监听商品添加消息，同步到solr索引库（删除是也要删除索引库对应数据），具体看onMessage方法-->
+    <!--监听商品添加消息，使用Freemarker生成静态html页面，具体看onMessage方法-->
     <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="topicDestination" />
-        <property name="messageListener" ref="itemMessageListener" />
+        <property name="messageListener" ref="htmlGenListener" />
     </bean>
 
 </beans>

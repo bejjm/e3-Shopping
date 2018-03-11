@@ -8,7 +8,7 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
-    <!--连接redis单机版（使用jedis连接池）
+    <!--连接redis单机版（使用jedis连接池）-->
     <bean id="jedisClientPool" class="cn.e3mall.common.jedis.JedisClientPool">
         <property name="jedisPool" ref="jedisPool"/>
     </bean>
@@ -16,17 +16,17 @@
         <constructor-arg name="host" value="192.168.25.129"/>
         <constructor-arg name="port" value="6379"/>
     </bean>
-    -->
+
     <!--
         注意：单机版和集群版不能共存，使用单机版时注释集群版的配置。使用集群版，把单机版注释。
     -->
 
     <!--连接redis集群版（使用jedisCluster）-->
-    <bean id="jedisClientCluster" class="cn.e3mall.common.jedis.JedisClientCluster">
+    <!--<bean id="jedisClientCluster" class="cn.e3mall.common.jedis.JedisClientCluster">
         <property name="jedisCluster" ref="jedisCluster"/>
     </bean>
     <bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">
-        <!--请参考JedisTest.java的testJedisCluster方法-->
+        &lt;!&ndash;请参考JedisTest.java的testJedisCluster方法&ndash;&gt;
         <constructor-arg name="nodes">
             <set>
                 <bean class="redis.clients.jedis.HostAndPort">
@@ -55,6 +55,6 @@
                 </bean>
             </set>
         </constructor-arg>
-    </bean>
+    </bean>-->
 
 </beans>

@@ -1,6 +1,7 @@
 var E3MALL = {
 	checkLogin : function(){
-		var _ticket = $.cookie("TT_TOKEN");
+	    //token为LoginController存入的key
+		var _ticket = $.cookie("token");
 		if(!_ticket){
 			return ;
 		}

@@ -19,7 +19,7 @@
     <context:property-placeholder location="classpath:conf/resource.properties" />
 
     <!-- 引用dubbo服务 -->
-    <dubbo:application name="e3-manager-web"/>
+    <dubbo:application name="e3-portal-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.25.128:2181"/>
     <!-- id 为Controller需要注入的service 例如：private ContentService contentService -->
     <dubbo:reference interface="cn.e3mall.content.service.ContentService" id="contentService" />

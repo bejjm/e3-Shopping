@@ -8,7 +8,7 @@ import java.util.List;
 
 public class JedisClientCluster implements JedisClient {
 
-	//	@Autowired
+	//	@Autowired，用到的时候 ，在applicationContext-redis.xml文件中注入，需要set方法
 	private JedisCluster jedisCluster;
 
 	public void setJedisCluster(JedisCluster jedisCluster) {

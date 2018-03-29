@@ -9,7 +9,7 @@ import java.util.List;
 
 public class JedisClientPool implements JedisClient {
 
-	//	@Autowired
+	//	@Autowired，用到的时候 ，在applicationContext-redis.xml文件中注入，需要set方法
 	private JedisPool jedisPool;
 
 	public void setJedisPool(JedisPool jedisPool) {
